@@ -5,7 +5,7 @@ function App() {
 
   const fetchMessage = async () => {
     try {
-      const response = await fetch('/hello');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/hello`);
       const data = await response.text();
       setMessage(data);
     } catch (error) {
