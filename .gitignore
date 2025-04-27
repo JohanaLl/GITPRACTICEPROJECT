@@ -1,8 +1,17 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Ignorar carpetas de construcción
+/backend/target/
+/frontend/build/
+
+/node_modules
+/frontend/node_modules
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar configuraciones locales
+*.log
+*.env
 
 ### STS ###
 .apt_generated
