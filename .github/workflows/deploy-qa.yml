@@ -1,0 +1,19 @@
+name: Deploy QA
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Backend Deploy (Render)
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_QA }}
+
+      - name: Trigger Frontend Deploy (Vercel)
+        run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_QA }}
